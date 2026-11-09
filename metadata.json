@@ -1,0 +1,6 @@
+{
+  "name": "Rain Ember - Điếu Thuốc Tránh Mưa",
+  "description": "Trò chơi điều khiển điếu thuốc lá đang cháy né tránh hạt mưa rơi kết hợp nhạc nền lãng mạn, hấp thụ ngọn lửa để thu ngắn chiều dài và đạt 100 điểm mở khóa phần thưởng bao thuốc hoàng gia. Designed by Ngô Mạnh Hải.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
