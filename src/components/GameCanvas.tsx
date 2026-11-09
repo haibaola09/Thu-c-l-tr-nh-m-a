@@ -292,12 +292,12 @@ export const GameCanvas: React.FC<GameCanvasProps> = ({
           }
         }
 
-        // Spawn Distinct Water Droplets 💧 (Mật độ rải rác sôi động, nhịp độ dồn dập hấp dẫn)
-        // MEDIUM (Mặc định): 8 giọt khởi đầu, tăng dần lên 16 giọt ở mốc 100
-        // LOW (Thưa): 4 giọt khởi đầu, tăng dần lên 8 giọt
+        // Spawn Distinct Water Droplets 💧 (Mật độ giọt nước được giảm xuống một chút thoáng đãng hơn)
+        // MEDIUM (Mặc định): 5 giọt khởi đầu, tăng dần lên 11 giọt ở mốc 100
+        // LOW (Rất thưa): 3 giọt khởi đầu, tăng dần lên 6 giọt
         const isMedium = densityMode === 'MEDIUM';
-        const maxDrops = isMedium ? 16 : 8;
-        const baseDrops = isMedium ? 8 : 4;
+        const maxDrops = isMedium ? 11 : 6;
+        const baseDrops = isMedium ? 5 : 3;
         const targetRainCount = Math.min(
           maxDrops,
           Math.max(baseDrops, Math.floor(baseDrops + (stateRef.current.score / 100) * (maxDrops - baseDrops)))
@@ -311,8 +311,8 @@ export const GameCanvas: React.FC<GameCanvasProps> = ({
           const actualSpeed = baseSpeed * speedMultiplier;
           const height = radius * (1.85 + (actualSpeed / 350) * 0.35); // Khí động học: đuôi giọt nước thon dài theo tốc độ
 
-          // Stagger spawn vertically with good spacing
-          const spawnY = -60 - Math.random() * 180;
+          // Stagger spawn vertically with good spacing (giãn cách thả giọt đều đặn)
+          const spawnY = -70 - Math.random() * 220;
           const spawnX = 35 + Math.random() * (width - 70);
 
           raindropsRef.current.push({
